@@ -38,3 +38,4 @@ Status
 DeadLink is a continuous work in progress. Features, visual elements and interactive experiences are actively being developed and experimented with.
 
 Website
+https://danisn4tch.github.io/DeadLink/
