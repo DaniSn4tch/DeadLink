@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeadLink.net - Manifesto</title>
-    <link rel="stylesheet" href="stylesheet/index.css?v=1.26">
+    <link rel="stylesheet" href="stylesheet/common.css?v=1.30">
+    <link rel="stylesheet" href="stylesheet/manifesto.css?v=1.35">
     <link rel="icon" type="image/x-icon" href="/photos/deadlink_icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,15 +23,33 @@
         </div>
     </header>
     <main class="container">
-        <section class="manifesto-invitation">
+        <section class="manifesto-invitation" id="manifesto-invitation">
             <p class="creepy-helper">The eye is watching. Press it.</p>
-            <a class="manifesto-trigger" href="index.html" aria-label="Go to the home page">
-                <img src="photos/eye.gif" alt="" class="manifesto">
-                <img src="photos/stilleye.jpg" alt="" class="manifesto manifesto-still" aria-hidden="true">
-            </a>
+            <div class="manifesto-stage">
+                <button class="manifesto-trigger" type="button" aria-label="Reveal the DeadLink manifesto" aria-expanded="false" aria-controls="manifesto-copy">
+                    <img src="photos/eye.gif" alt="" class="manifesto">
+                    <img src="photos/stilleye.jpg" alt="" class="manifesto manifesto-still" aria-hidden="true">
+                </button>
+                <div class="manifesto-copy" id="manifesto-copy" aria-live="polite">
+                    <p class="manifesto-fragment">A digital magazine for the lost and found.</p>
+                    <p class="manifesto-fragment">An archive of new discoveries and upcoming content.</p>
+                    <p class="manifesto-fragment">DeadLink preserves what the internet lets disappear.</p>
+                    <p class="manifesto-fragment">Every broken path leads somewhere worth remembering.</p>
+                    <p class="manifesto-fragment">Look closer. The past is still online.</p>
+                    <img src="photos/mascott.png" alt="DeadLink mascot" class="manifesto-mascot">
+                </div>
+            </div>
         </section>
     </main>
+    <script>
+        const invitation = document.getElementById("manifesto-invitation");
+        const trigger = invitation.querySelector(".manifesto-trigger");
 
+        trigger.addEventListener("click", function() {
+            invitation.classList.add("is-revealed");
+            trigger.setAttribute("aria-expanded", "true");
+        });
+    </script>
 </body>
 
 </html>

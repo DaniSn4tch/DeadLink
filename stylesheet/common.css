@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'fira sans', sans-serif;
+    background-color: #000000;
+    color: #f1eee9;
+}
+
+header {
+    position: relative;
+    background-color: #191817;
+    font-family: 'fira sans', sans-serif;
+    color: #fff;
+    padding: 10px 60px;
+    border-bottom: 1px solid #444;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(20, 19, 18, 0.86), rgba(20, 19, 18, 0.86)),
+        url("../photos/skull.jpg");
+    background-repeat: round;
+    background-size: 150px auto;
+    background-position: 0 0;
+    filter: blur(4px) brightness(0.7);
+    -webkit-filter: blur(4px) brightness(0.7);
+    opacity: 1;
+    z-index: 0;
+}
+
+header > * {
+    position: relative;
+    z-index: 1;
+}
+
+.container {
+    min-height: calc(100vh - 73px);
+    display: grid;
+    place-items: center;
+    padding: 48px 24px;
+    box-sizing: border-box;
+    color: #f1eee9;
+    font-family: 'fira sans', sans-serif;
+    text-align: center;
+}
+
+@keyframes arrive {
+    from {
+        opacity: 0;
+        transform: translateY(22px);
+        filter: blur(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.topnav .brand {
+    display: inline-block;
+    font-family: 'fira sans', sans-serif;
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    text-shadow: 0 0 10px #fff;
+    line-height: 1;
+    padding: 14px 16px;
+}
+
+.headertext {
+    font-family: 'fira sans', sans-serif;
+    color: #7c7b7b;
+    padding: 10px 24px;
+    display: inline-block;
+    text-align: right;
+    text-decoration: none;
+}
+
+.topnav {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topnav a {
+    color: #7c7b7b;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn {
+    border: none;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: #fff;
+}
+
+.change {
+    color: rgb(122, 122, 122);
+}
+
+.selected {
+    color: #c2b9af !important;
+}
+
+h2, h3 {
+    display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        padding: 8px 18px;
+    }
+
+    .topnav .brand {
+        font-size: 22px;
+        padding: 8px 0;
+    }
+
+    .headertext,
+    .topnav a,
+    .btn {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .container {
+        min-height: calc(100svh - 55px);
+        padding: 36px 20px;
+    }
+}
